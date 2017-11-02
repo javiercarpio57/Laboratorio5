@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package BaseDatos;
 
 import java.io.Serializable;
@@ -22,6 +18,10 @@ public class TanqueOrtogonal implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private int base;
+    private int altura;
+    private int profundidad;
+    
     public Long getId() {
         return id;
     }

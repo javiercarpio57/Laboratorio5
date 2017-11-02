@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package BaseDatos;
 
 import java.io.Serializable;
@@ -22,6 +18,9 @@ public class TanqueCilindrico implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private int radio;
+    private int altura;
+    
     public Long getId() {
         return id;
     }
