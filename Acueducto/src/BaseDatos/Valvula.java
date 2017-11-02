@@ -1,3 +1,4 @@
+
 package BaseDatos;
 
 import java.io.Serializable;
@@ -11,23 +12,24 @@ import javax.persistence.Id;
  * @author javie
  */
 @Entity
-public class Tanque implements Serializable {
+public class Valvula implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //private 
-    private Valvula[] valvula;
+    private String municipio;
+    private int habitantes;
+    private boolean estado;
     
-    public Tanque(){
-        valvula = new Valvula[10];
+    public Valvula(){
+        
     }
     
-    public Tanque(Valvula[] valv){
-        valv = new Valvula[10];
-        
-        valvula = valv;
+    public Valvula(String muni, int hab){
+        municipio = muni;
+        habitantes = hab;
+        estado = true;
     }
     
     public Long getId() {
@@ -48,10 +50,10 @@ public class Tanque implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Tanque)) {
+        if (!(object instanceof Valvula)) {
             return false;
         }
-        Tanque other = (Tanque) object;
+        Valvula other = (Valvula) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -60,7 +62,7 @@ public class Tanque implements Serializable {
 
     @Override
     public String toString() {
-        return "BaseDatos.Tanque[ id=" + id + " ]";
+        return "BaseDatos.Valvula[ id=" + id + " ]";
     }
     
 }

@@ -12,7 +12,7 @@ import javax.persistence.Id;
  * @author javie
  */
 @Entity
-public class TanqueOrtogonal implements Serializable {
+public class TanqueOrtogonal extends Tanque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +21,16 @@ public class TanqueOrtogonal implements Serializable {
     private int base;
     private int altura;
     private int profundidad;
+    
+    public TanqueOrtogonal(){
+        
+    }
+    
+    public TanqueOrtogonal(int b, int H, int p){
+        base = b;
+        altura = H;
+        profundidad = p;
+    }
     
     public Long getId() {
         return id;

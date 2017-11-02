@@ -12,7 +12,7 @@ import javax.persistence.Id;
  * @author javie
  */
 @Entity
-public class TanqueCilindrico implements Serializable {
+public class TanqueCilindrico extends Tanque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +20,15 @@ public class TanqueCilindrico implements Serializable {
 
     private int radio;
     private int altura;
+    
+    public TanqueCilindrico(){
+        
+    }
+    
+    public TanqueCilindrico(int R, int H){
+        radio = R;
+        altura = H;
+    }
     
     public Long getId() {
         return id;
