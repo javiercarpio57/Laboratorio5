@@ -27,12 +27,10 @@ public class NuevoTanque extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        tipoDeTanque = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         m1 = new javax.swing.JTextField();
-        h1 = new javax.swing.JTextField();
         m2 = new javax.swing.JTextField();
         m3 = new javax.swing.JTextField();
         m4 = new javax.swing.JTextField();
@@ -42,154 +40,129 @@ public class NuevoTanque extends javax.swing.JFrame {
         m8 = new javax.swing.JTextField();
         m9 = new javax.swing.JTextField();
         m10 = new javax.swing.JTextField();
-        h2 = new javax.swing.JTextField();
-        h3 = new javax.swing.JTextField();
-        h4 = new javax.swing.JTextField();
-        h5 = new javax.swing.JTextField();
-        h6 = new javax.swing.JTextField();
-        h7 = new javax.swing.JTextField();
-        h8 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        largo = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        ancho = new javax.swing.JTextField();
+        altura = new javax.swing.JTextField();
+        radio = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        guardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Seleccione la forma del Tanque");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 40, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tanque Cilindrico", "Tanque Cubico", "Tanque Ortogonal", " " }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        tipoDeTanque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tanque Cilindrico", "Tanque Cubico", "Tanque Ortogonal", " " }));
+        tipoDeTanque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                tipoDeTanqueActionPerformed(evt);
             }
         });
+        getContentPane().add(tipoDeTanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 36, -1, -1));
 
         jLabel4.setText("Ingrese la información correspondiente:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 170, -1, -1));
 
         jLabel5.setText("Municipio");
-
-        jLabel6.setText("Cantidad de Habitantes");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 198, -1, -1));
+        getContentPane().add(m1, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 220, 141, -1));
 
         m2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m2ActionPerformed(evt);
             }
         });
+        getContentPane().add(m2, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 252, 141, -1));
+        getContentPane().add(m3, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 284, 141, -1));
 
         m4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 m4ActionPerformed(evt);
             }
         });
+        getContentPane().add(m4, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 316, 141, -1));
+        getContentPane().add(m5, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 348, 141, -1));
+        getContentPane().add(m6, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 383, 141, -1));
+        getContentPane().add(m7, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 415, 141, -1));
+        getContentPane().add(m8, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 447, 141, -1));
+        getContentPane().add(m9, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 479, 141, -1));
+        getContentPane().add(m10, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 511, 141, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel1)
-                        .addGap(77, 77, 77)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel5)
-                                    .addComponent(m1)
-                                    .addComponent(m2)
-                                    .addComponent(m3)
-                                    .addComponent(m4)
-                                    .addComponent(m5)
-                                    .addComponent(m6)
-                                    .addComponent(m7)
-                                    .addComponent(m8)
-                                    .addComponent(m9)
-                                    .addComponent(m10, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
-                                .addGap(45, 45, 45)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(h1)
-                                            .addComponent(h2)
-                                            .addComponent(h3)
-                                            .addComponent(h4)
-                                            .addComponent(h5)
-                                            .addComponent(h6)
-                                            .addComponent(h7)
-                                            .addComponent(h8)
-                                            .addComponent(jTextField17)
-                                            .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))))))))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(h8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
+        jLabel2.setText("Válvula 1");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 225, -1, -1));
+
+        jLabel3.setText("Válvula 2");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 257, -1, -1));
+
+        jLabel7.setText("Válvula 3");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 289, -1, -1));
+
+        jLabel8.setText("Válvula 4");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 321, -1, -1));
+
+        jLabel9.setText("Válvula 5");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 353, -1, -1));
+
+        jLabel10.setText("Válvula 6");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 388, -1, -1));
+
+        jLabel11.setText("Válvula 7");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 420, -1, -1));
+
+        jLabel12.setText("Válvula 8");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 452, -1, -1));
+
+        jLabel13.setText("Válvula 9");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 484, -1, -1));
+
+        jLabel14.setText("Válvula 10");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 516, -1, -1));
+
+        jLabel15.setText("Largo");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 74, -1, -1));
+        getContentPane().add(largo, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 69, 94, -1));
+
+        jLabel16.setText("Ancho");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 118, -1, -1));
+
+        ancho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anchoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ancho, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 113, 95, -1));
+        getContentPane().add(altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 69, 84, -1));
+        getContentPane().add(radio, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 113, 84, -1));
+
+        jLabel17.setText("Altura");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 74, -1, -1));
+
+        jLabel18.setText("Radio");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 118, -1, -1));
+
+        guardar.setText("Guardar");
+        getContentPane().add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 348, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void tipoDeTanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoDeTanqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_tipoDeTanqueActionPerformed
 
     private void m2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m2ActionPerformed
         // TODO add your handling code here:
@@ -198,6 +171,10 @@ public class NuevoTanque extends javax.swing.JFrame {
     private void m4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_m4ActionPerformed
+
+    private void anchoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anchoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_anchoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,21 +212,27 @@ public class NuevoTanque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField h1;
-    private javax.swing.JTextField h2;
-    private javax.swing.JTextField h3;
-    private javax.swing.JTextField h4;
-    private javax.swing.JTextField h5;
-    private javax.swing.JTextField h6;
-    private javax.swing.JTextField h7;
-    private javax.swing.JTextField h8;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField altura;
+    private javax.swing.JTextField ancho;
+    private javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField largo;
     private javax.swing.JTextField m1;
     private javax.swing.JTextField m10;
     private javax.swing.JTextField m2;
@@ -260,5 +243,7 @@ public class NuevoTanque extends javax.swing.JFrame {
     private javax.swing.JTextField m7;
     private javax.swing.JTextField m8;
     private javax.swing.JTextField m9;
+    private javax.swing.JTextField radio;
+    private javax.swing.JComboBox<String> tipoDeTanque;
     // End of variables declaration//GEN-END:variables
 }
