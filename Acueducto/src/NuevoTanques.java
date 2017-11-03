@@ -1,5 +1,7 @@
 
+import BaseDatos.BasedeDatos;
 import BaseDatos.Valvula;
+import java.util.ArrayList;
 
 
 
@@ -12,10 +14,13 @@ public class NuevoTanques extends javax.swing.JFrame {
     /**
      * Creates new form NuevoTanques
      */
+    private ArrayList<Valvula> valv;
+    
     public NuevoTanques() {
         initComponents();
+        valv = new ArrayList<>();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -395,8 +400,11 @@ public class NuevoTanques extends javax.swing.JFrame {
         int P10 = (int)spnP10.getValue();
         
         
-        Valvula valv = new Valvula(M1, P1);
-        
+        Valvula valv1 = new Valvula(M1, P1);
+        valv.add(valv1);
+        BasedeDatos db = new BasedeDatos();
+        db.agregarValv(valv1);
+        db.cerrarBD();
         
     }//GEN-LAST:event_guardarActionPerformed
 

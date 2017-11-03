@@ -22,12 +22,12 @@ public class Valvula implements Serializable {
     private String municipio;
     private int habitantes;
     private boolean estado;
-    private ArrayList<Valvula> valv;
     
     public Valvula(){
-        valv = new ArrayList<>();
         
-    }
+        
+    }   
+    
     
     public Valvula(String muni, int hab){
         municipio = muni;
@@ -35,8 +35,17 @@ public class Valvula implements Serializable {
         estado = true;
     }
     
-    public void agregarValvula(Valvula v){
-        valv.add(v);
+    
+    public String getMunicipio(){
+        return municipio;
+    }
+    
+    public int getHabitantes(){
+        return habitantes;
+    }
+    
+    public boolean getEstado(){
+        return estado;
     }
     
     public Long getId() {

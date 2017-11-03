@@ -11,14 +11,15 @@ import javax.persistence.Query;
  * @author javie
  */
 public class BasedeDatos {
-    Valvula valvula; // la universidad en donde se guardan trabajadores
-    EntityManagerFactory emf;  // para especificar la Persistent Unit y conexion a la base de datos
-    EntityManager em; // manejador de las entidades en la base de datos
+    Valvula valvula; 
+    EntityManagerFactory emf;  
+    EntityManager em; 
     
     public BasedeDatos(){
-        emf = javax.persistence.Persistence.createEntityManagerFactory("universidadJPAPU");
+        emf = javax.persistence.Persistence.createEntityManagerFactory("AcueductoPU");
         em = emf.createEntityManager();
-        valvula = new Valvula(); // universidad sin trabajadores
+        
+        valvula = new Valvula(); 
     }
     
     public void cerrarBD(){
@@ -27,6 +28,8 @@ public class BasedeDatos {
     }
     
     public void agregarValv(Valvula v){
-        
+        em.getTransaction().begin();
+        em.persist(v);
+        em.getTransaction().commit();
     }
 }
