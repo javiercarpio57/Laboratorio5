@@ -21,12 +21,10 @@ public class Tanque implements Serializable {
     private Valvula[] valvula;
     
     public Tanque(){
-        valvula = new Valvula[10];
+        
     }
     
     public Tanque(Valvula[] valv){
-        valv = new Valvula[10];
-        
         valvula = valv;
     }
     

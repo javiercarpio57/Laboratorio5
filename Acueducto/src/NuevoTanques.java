@@ -1,5 +1,7 @@
 
 import BaseDatos.BasedeDatos;
+import BaseDatos.Tanque;
+import BaseDatos.TanqueCilindrico;
 import BaseDatos.Valvula;
 import java.util.ArrayList;
 
@@ -15,10 +17,14 @@ public class NuevoTanques extends javax.swing.JFrame {
      * Creates new form NuevoTanques
      */
     private ArrayList<Valvula> valv;
+    private ArrayList<Tanque> tanque;
+    private Valvula[] valvulas;
     
     public NuevoTanques() {
         initComponents();
         valv = new ArrayList<>();
+        tanque = new ArrayList<>();
+        valvulas = new Valvula[10];
     }
     
     /**
@@ -31,14 +37,14 @@ public class NuevoTanques extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        tipoDeTanque = new javax.swing.JComboBox<String>();
+        cmbTanque = new javax.swing.JComboBox<String>();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         spnLargo = new javax.swing.JSpinner();
         spnAncho = new javax.swing.JSpinner();
-        spnAlutra = new javax.swing.JSpinner();
+        spnAltura = new javax.swing.JSpinner();
         spnRadio = new javax.swing.JSpinner();
         jLabel19 = new javax.swing.JLabel();
         spnID = new javax.swing.JSpinner();
@@ -81,10 +87,10 @@ public class NuevoTanques extends javax.swing.JFrame {
 
         jLabel1.setText("Seleccione la forma del Tanque");
 
-        tipoDeTanque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tanque Cilindrico", "Tanque Cubico", "Tanque Ortogonal", " " }));
-        tipoDeTanque.addActionListener(new java.awt.event.ActionListener() {
+        cmbTanque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tanque Cilindrico", "Tanque Cubico", "Tanque Ortogonal", " " }));
+        cmbTanque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoDeTanqueActionPerformed(evt);
+                cmbTanqueActionPerformed(evt);
             }
         });
 
@@ -100,7 +106,7 @@ public class NuevoTanques extends javax.swing.JFrame {
 
         spnAncho.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
-        spnAlutra.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+        spnAltura.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
         spnRadio.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
@@ -197,7 +203,7 @@ public class NuevoTanques extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(spnRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spnAlutra, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(101, 101, 101))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +211,7 @@ public class NuevoTanques extends javax.swing.JFrame {
                         .addGap(109, 109, 109)
                         .addComponent(jLabel1)
                         .addGap(54, 54, 54)
-                        .addComponent(tipoDeTanque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cmbTanque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(257, 257, 257)
                         .addComponent(jLabel4))
@@ -278,7 +284,7 @@ public class NuevoTanques extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(tipoDeTanque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbTanque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -294,7 +300,7 @@ public class NuevoTanques extends javax.swing.JFrame {
                             .addComponent(jLabel18)
                             .addComponent(spnAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(spnAlutra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(spnRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11)
@@ -364,9 +370,9 @@ public class NuevoTanques extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tipoDeTanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoDeTanqueActionPerformed
+    private void cmbTanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTanqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tipoDeTanqueActionPerformed
+    }//GEN-LAST:event_cmbTanqueActionPerformed
 
     private void m2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m2ActionPerformed
         // TODO add your handling code here:
@@ -402,9 +408,71 @@ public class NuevoTanques extends javax.swing.JFrame {
         
         Valvula valv1 = new Valvula(M1, P1);
         valv.add(valv1);
+        Valvula valv2 = new Valvula(M2, P2);
+        valv.add(valv2);
+        Valvula valv3 = new Valvula(M3, P3);
+        valv.add(valv3);
+        Valvula valv4 = new Valvula(M4, P4);
+        valv.add(valv4);
+        Valvula valv5 = new Valvula(M5, P5);
+        valv.add(valv5);
+        Valvula valv6 = new Valvula(M6, P6);
+        valv.add(valv6);
+        Valvula valv7 = new Valvula(M7, P7);
+        valv.add(valv7);
+        Valvula valv8 = new Valvula(M8, P8);
+        valv.add(valv8);
+        Valvula valv9 = new Valvula(M9, P9);
+        valv.add(valv9);
+        Valvula valv10 = new Valvula(M10, P10);
+        valv.add(valv10);
+        
         BasedeDatos db = new BasedeDatos();
-        db.agregarValv(valv1);
+        db.agregarValv(valv1, valv2, valv3, valv4, valv5, valv6, valv7, valv8, valv9, valv10);
         db.cerrarBD();
+        
+        //---------------------------------------
+        
+        valvulas[0] = valv1;
+        valvulas[1] = valv2;
+        valvulas[2] = valv3;
+        valvulas[3] = valv4;
+        valvulas[4] = valv5;
+        valvulas[5] = valv6;
+        valvulas[6] = valv7;
+        valvulas[7] = valv8;
+        valvulas[8] = valv9;
+        valvulas[9] = valv10;
+        
+        Tanque tq;
+        tq = new Tanque(valvulas);
+        db.agregarTanque(tq);
+        
+        //---------------------------------------
+        
+        String tipo = (String)cmbTanque.getSelectedItem();
+        int radio = (int)spnRadio.getValue();
+        int altura = (int)spnAltura.getValue();
+        int largo = (int)spnLargo.getValue();
+        int ancho = (int)spnAncho.getValue();
+        
+        
+        if(tipo.equals("Tanque Cilindrico")){
+            tq = new TanqueCilindrico(radio, altura);
+            
+        }else if(tipo.equals("Tanque Cubico")){
+            
+            
+        }else if(tipo.equals("Tanque Ortogonal")){
+            
+        }
+        
+            
+            
+
+
+
+        
         
     }//GEN-LAST:event_guardarActionPerformed
 
@@ -444,6 +512,7 @@ public class NuevoTanques extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbTanque;
     private javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -474,7 +543,7 @@ public class NuevoTanques extends javax.swing.JFrame {
     private javax.swing.JTextField m7;
     private javax.swing.JTextField m8;
     private javax.swing.JTextField m9;
-    private javax.swing.JSpinner spnAlutra;
+    private javax.swing.JSpinner spnAltura;
     private javax.swing.JSpinner spnAncho;
     private javax.swing.JSpinner spnID;
     private javax.swing.JSpinner spnLargo;
@@ -489,6 +558,5 @@ public class NuevoTanques extends javax.swing.JFrame {
     private javax.swing.JSpinner spnP8;
     private javax.swing.JSpinner spnP9;
     private javax.swing.JSpinner spnRadio;
-    private javax.swing.JComboBox<String> tipoDeTanque;
     // End of variables declaration//GEN-END:variables
 }

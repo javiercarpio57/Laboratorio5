@@ -46,7 +46,7 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="spnRadio" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
-                  <Component id="spnAlutra" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                  <Component id="spnAltura" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
           </Group>
@@ -56,7 +56,7 @@
                       <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="tipoDeTanque" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbTanque" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
@@ -151,7 +151,7 @@
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tipoDeTanque" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbTanque" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -171,7 +171,7 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="spnAlutra" min="-2" max="-2" attributes="0"/>
+                      <Component id="spnAltura" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="spnRadio" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -263,7 +263,7 @@
         <Property name="text" type="java.lang.String" value="Seleccione la forma del Tanque"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="tipoDeTanque">
+    <Component class="javax.swing.JComboBox" name="cmbTanque">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -275,7 +275,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoDeTanqueActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbTanqueActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -315,7 +315,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spnAlutra">
+    <Component class="javax.swing.JSpinner" name="spnAltura">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel initial="1" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
