@@ -27,7 +27,7 @@ public class NuevoTanque extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        tipoDeTanque = new javax.swing.JComboBox<>();
+        tipoDeTanque = new javax.swing.JComboBox<String>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         m1 = new javax.swing.JTextField();
@@ -66,7 +66,7 @@ public class NuevoTanque extends javax.swing.JFrame {
         jLabel1.setText("Seleccione la forma del Tanque");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 40, -1, -1));
 
-        tipoDeTanque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tanque Cilindrico", "Tanque Cubico", "Tanque Ortogonal", " " }));
+        tipoDeTanque.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tanque Cilindrico", "Tanque Cubico", "Tanque Ortogonal", " " }));
         tipoDeTanque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoDeTanqueActionPerformed(evt);
@@ -155,6 +155,11 @@ public class NuevoTanque extends javax.swing.JFrame {
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 118, -1, -1));
 
         guardar.setText("Guardar");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
         getContentPane().add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 348, -1, -1));
 
         pack();
@@ -175,6 +180,10 @@ public class NuevoTanque extends javax.swing.JFrame {
     private void anchoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anchoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_anchoActionPerformed
+
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guardarActionPerformed
 
     /**
      * @param args the command line arguments
