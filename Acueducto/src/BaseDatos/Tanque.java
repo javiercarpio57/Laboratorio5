@@ -27,7 +27,9 @@ public class Tanque implements Serializable {
     public Tanque(Valvula[] valv){
         valvula = valv;
     }
-    
+    public double calcularVolumen(int r, int h){
+        return 0.0;
+    }
     public Long getId() {
         return id;
     }
@@ -60,5 +62,6 @@ public class Tanque implements Serializable {
     public String toString() {
         return "BaseDatos.Tanque[ id=" + id + " ]";
     }
+
     
 }

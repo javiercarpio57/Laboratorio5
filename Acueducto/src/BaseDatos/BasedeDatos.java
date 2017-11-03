@@ -48,4 +48,10 @@ public class BasedeDatos {
         em.persist(t);
         em.getTransaction().commit();
     }
+    
+    public void agregarTanqueCilindrico(TanqueCilindrico tc){
+        em.getTransaction().begin();
+        em.persist(tc);
+        em.getTransaction().commit();
+    }
 }

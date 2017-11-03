@@ -20,16 +20,43 @@ public class TanqueCilindrico extends Tanque implements Serializable {
 
     private int radio;
     private int altura;
+    private double volumen;
     
     public TanqueCilindrico(){
         
     }
+
     
-    public TanqueCilindrico(int R, int H){
+    
+    public TanqueCilindrico(int R, int H, double vol){
         radio = R;
         altura = H;
+        volumen = vol;
     }
     
+    public int getRadio(){
+        return radio;
+    }
+    
+    public int getAltura(){
+        return altura;
+    }
+    
+    public double getVolumen(){
+        return volumen;
+    }
+    
+    public void setVolumen(double vol){
+        volumen = vol;
+    }
+    
+    @Override
+    public double calcularVolumen(int radio, int altura){
+        double vol;
+        vol = radio * altura * Math.PI;
+        
+        return vol;
+    }
     public Long getId() {
         return id;
     }

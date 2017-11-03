@@ -2,6 +2,7 @@
 import BaseDatos.BasedeDatos;
 import BaseDatos.Tanque;
 import BaseDatos.TanqueCilindrico;
+import BaseDatos.TanqueCubico;
 import BaseDatos.Valvula;
 import java.util.ArrayList;
 
@@ -456,15 +457,20 @@ public class NuevoTanques extends javax.swing.JFrame {
         int largo = (int)spnLargo.getValue();
         int ancho = (int)spnAncho.getValue();
         
-        
-        if(tipo.equals("Tanque Cilindrico")){
-            tq = new TanqueCilindrico(radio, altura);
-            
-        }else if(tipo.equals("Tanque Cubico")){
-            
-            
-        }else if(tipo.equals("Tanque Ortogonal")){
-            
+        double volumen;
+        switch (tipo) {
+            case "Tanque Cilindrico":
+                tq = new TanqueCilindrico();
+                volumen = tq.calcularVolumen(radio, altura);
+                tq = new TanqueCilindrico(radio, altura, volumen);
+                db.agregarTanqueCilindrico((TanqueCilindrico) tq);
+                break;
+            case "Tanque Cubico":
+                tq = new TanqueCubico();
+                
+                break;
+            case "Tanque Ortogonal":
+                break;
         }
         
             
