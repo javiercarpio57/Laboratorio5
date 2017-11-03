@@ -2,6 +2,7 @@
 package BaseDatos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +22,10 @@ public class Valvula implements Serializable {
     private String municipio;
     private int habitantes;
     private boolean estado;
+    private ArrayList<Valvula> valv;
     
     public Valvula(){
+        valv = new ArrayList<>();
         
     }
     
@@ -30,6 +33,10 @@ public class Valvula implements Serializable {
         municipio = muni;
         habitantes = hab;
         estado = true;
+    }
+    
+    public void agregarValvula(Valvula v){
+        valv.add(v);
     }
     
     public Long getId() {
