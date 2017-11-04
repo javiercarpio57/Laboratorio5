@@ -2,6 +2,7 @@
 package BaseDatos;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,17 +17,24 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Long id;
 
     private int base;
     private int altura;
     private int profundidad;
     
+    private static final Valvula[] valv = new Valvula[10];
+    
     public TanqueOrtogonal(){
-        
+        super(valv, 0);
+        base = 0;
+        altura = 0;
+        profundidad = 0;
     }
     
-    public TanqueOrtogonal(int b, int H, int p){
+    public TanqueOrtogonal(Valvula[] val, int b, int H, int p, double vol){
+        super(val, vol);
         base = b;
         altura = H;
         profundidad = p;

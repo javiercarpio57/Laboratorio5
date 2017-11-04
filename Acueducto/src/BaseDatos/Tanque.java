@@ -1,6 +1,7 @@
 package BaseDatos;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,20 +16,23 @@ public class Tanque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Long id;
 
     //private 
-    private int num;
-    private Valvula[] valvula;
+    protected Valvula[] valvula;
+    protected double volumen;
     
+       
     public Tanque(){
         
     }
     
-    public Tanque(int Id, Valvula[] valv){
-        num = Id;
+    public Tanque(Valvula[] valv, double vol){
         valvula = valv;
+        volumen = vol;
     }
+    
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho){
         
         return 1.0;
@@ -64,7 +68,10 @@ public class Tanque implements Serializable {
 
     @Override
     public String toString() {
-        return "BaseDatos.Tanque[ id=" + id + " ]";
+        String cadena = "";
+        cadena += "ID: " + id; 
+                
+        return cadena;
     }
 
     

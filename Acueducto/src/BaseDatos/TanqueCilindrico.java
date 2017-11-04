@@ -2,6 +2,7 @@
 package BaseDatos;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,21 +17,25 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Long id;
 
     private int radio;
     private int altura;
-    private double volumen;
+    
+    private static final Valvula[] valv = new Valvula[10];
     
     public TanqueCilindrico(){
-        
+        super(valv, 0);
+        radio = 0;
+        altura = 0;
+        volumen = 0;
     }
     
-    public TanqueCilindrico(int ID, Valvula[] valv, int R, int H, double vol){
-        super(ID, valv);
+    public TanqueCilindrico(Valvula[] valv, int R, int H, double vol){
+        super(valv, vol);
         radio = R;
         altura = H;
-        volumen = vol;
     }
     
     public int getRadio(){
@@ -52,7 +57,10 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     @Override
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
         double vol = radio * radio * altura * Math.PI;
-        System.out.println(vol);
+        
+        vol = vol * 100;
+        vol = Math.round(vol);
+        vol = vol / 100;
         return vol;
     }
     
@@ -88,7 +96,10 @@ public class TanqueCilindrico extends Tanque implements Serializable {
 
     @Override
     public String toString() {
-        return "BaseDatos.TanqueCilindrico[ id=" + id + " ]";
+        String cadena1 = "";
+        cadena1 += super.toString() + " - RADIO: " + radio + " - ALTURA: " + altura + " - VOLUMEN: " + volumen 
+                + "\n";
+        return cadena1 ;
     }
     
 }

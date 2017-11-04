@@ -2,6 +2,7 @@
 package BaseDatos;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,22 +17,29 @@ public class TanqueCubico extends Tanque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Long id;
 
     private int lado;
     
+    private static final Valvula[] valv = new Valvula[10];
+    
     public TanqueCubico(){
-        
+        super(valv, 0);
+        lado = 0;
     }
     
-    public TanqueCubico(int l){
+    public TanqueCubico(Valvula [] val, int l, double vol){
+        super(val, vol);
         lado = l;
     }
     
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }

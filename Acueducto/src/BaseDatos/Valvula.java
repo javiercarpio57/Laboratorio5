@@ -78,7 +78,7 @@ public class Valvula implements Serializable {
 
     @Override
     public String toString() {
-        return "BaseDatos.Valvula[ id=" + id + " ]";
+        return "\tMunicipio: " + municipio + "\t" + "Habitantes: " + habitantes + ".";
     }
     
 }
