@@ -1,6 +1,7 @@
 
 package BaseDatos;
 
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -49,9 +50,14 @@ public class BasedeDatos {
         em.getTransaction().commit();
     }
     
-    public void agregarTanqueCilindrico(TanqueCilindrico tc){
+    public Tanque agregarTanqueCilindrico(int ID, Valvula[] val, int radio, int altura, double vol){
+        TanqueCilindrico tc = new TanqueCilindrico(ID, val, radio, altura, vol);
+        
+        System.out.println("Guardando...");
         em.getTransaction().begin();
         em.persist(tc);
         em.getTransaction().commit();
+        
+        return tc;
     }
 }

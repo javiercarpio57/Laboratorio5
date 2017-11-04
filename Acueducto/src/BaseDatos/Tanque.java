@@ -18,18 +18,22 @@ public class Tanque implements Serializable {
     private Long id;
 
     //private 
+    private int num;
     private Valvula[] valvula;
     
     public Tanque(){
         
     }
     
-    public Tanque(Valvula[] valv){
+    public Tanque(int Id, Valvula[] valv){
+        num = Id;
         valvula = valv;
     }
-    public double calcularVolumen(int r, int h){
-        return 0.0;
+    public double calcularVolumen(int radio, int altura, int profundidad, int ancho){
+        
+        return 1.0;
     }
+    
     public Long getId() {
         return id;
     }

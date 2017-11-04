@@ -20,6 +20,7 @@ public class NuevoTanques extends javax.swing.JFrame {
     private ArrayList<Valvula> valv;
     private ArrayList<Tanque> tanque;
     private Valvula[] valvulas;
+    Tanque tq;
     
     public NuevoTanques() {
         initComponents();
@@ -430,7 +431,7 @@ public class NuevoTanques extends javax.swing.JFrame {
         
         BasedeDatos db = new BasedeDatos();
         db.agregarValv(valv1, valv2, valv3, valv4, valv5, valv6, valv7, valv8, valv9, valv10);
-        db.cerrarBD();
+        
         
         //---------------------------------------
         
@@ -445,13 +446,15 @@ public class NuevoTanques extends javax.swing.JFrame {
         valvulas[8] = valv9;
         valvulas[9] = valv10;
         
-        Tanque tq;
-        tq = new Tanque(valvulas);
-        db.agregarTanque(tq);
+        
+        //tq = new Tanque(valvulas);
+        //db.agregarTanque(tq);
         
         //---------------------------------------
         
         String tipo = (String)cmbTanque.getSelectedItem();
+        System.out.println(tipo);
+        int ID = (int)spnID.getValue();
         int radio = (int)spnRadio.getValue();
         int altura = (int)spnAltura.getValue();
         int largo = (int)spnLargo.getValue();
@@ -460,25 +463,20 @@ public class NuevoTanques extends javax.swing.JFrame {
         double volumen;
         switch (tipo) {
             case "Tanque Cilindrico":
-                tq = new TanqueCilindrico();
-                volumen = tq.calcularVolumen(radio, altura);
-                tq = new TanqueCilindrico(radio, altura, volumen);
-                db.agregarTanqueCilindrico((TanqueCilindrico) tq);
+                TanqueCilindrico a = new TanqueCilindrico();
+                volumen = a.calcularVolumen(radio, altura, largo, ancho);
+                System.out.println(volumen);
+                tanque.add(db.agregarTanqueCilindrico(ID, valvulas, radio, altura, volumen));
+                db.cerrarBD();
+                
                 break;
-            case "Tanque Cubico":
-                tq = new TanqueCubico();
+            case "Tanque Cubico":   
+                
                 
                 break;
             case "Tanque Ortogonal":
                 break;
         }
-        
-            
-            
-
-
-
-        
         
     }//GEN-LAST:event_guardarActionPerformed
 

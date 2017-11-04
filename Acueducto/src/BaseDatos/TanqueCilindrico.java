@@ -25,10 +25,9 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     public TanqueCilindrico(){
         
     }
-
     
-    
-    public TanqueCilindrico(int R, int H, double vol){
+    public TanqueCilindrico(int ID, Valvula[] valv, int R, int H, double vol){
+        super(ID, valv);
         radio = R;
         altura = H;
         volumen = vol;
@@ -49,14 +48,16 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     public void setVolumen(double vol){
         volumen = vol;
     }
-    
+
     @Override
-    public double calcularVolumen(int radio, int altura){
-        double vol;
-        vol = radio * altura * Math.PI;
-        
+    public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
+        double vol = radio * radio * altura * Math.PI;
+        System.out.println(vol);
         return vol;
     }
+    
+    
+    
     public Long getId() {
         return id;
     }
