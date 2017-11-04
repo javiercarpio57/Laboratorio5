@@ -26,14 +26,14 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     private static final Valvula[] valv = new Valvula[10];
     
     public TanqueCilindrico(){
-        super(0, valv, 0);
+        super(0, valv, 0, 0);
         radio = 0;
         altura = 0;
         volumen = 0;
     }
     
-    public TanqueCilindrico(int a, Valvula[] valv, int R, int H, double vol){
-        super(a, valv, vol);
+    public TanqueCilindrico(int a, Valvula[] valv, int R, int H, double vol, double cap){
+        super(a, valv, vol, cap);
         radio = R;
         altura = H;
     }
@@ -46,14 +46,28 @@ public class TanqueCilindrico extends Tanque implements Serializable {
         return altura;
     }
     
+    @Override
+    public double getCapacidad(){
+        return capacidad;
+    }
+    
+    @Override
     public double getVolumen(){
         return volumen;
     }
     
+    @Override
     public void setVolumen(double vol){
         volumen = vol;
     }
 
+    @Override
+    public String mostrar(){
+        String cadena1 = "";
+        cadena1 += super.toString() + "\nRADIO: " + radio + " metros\nALTURA: " + altura + " metros\nVOLUMEN: " + volumen + "  metros cubicos\nCAPACIDAD: " + capacidad+ " metros cubicos" ;
+        return cadena1 ;
+    }
+    
     @Override
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
         double vol = radio * radio * altura * Math.PI;
@@ -65,11 +79,12 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     }
     
     
-    
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -97,8 +112,10 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     @Override
     public String toString() {
         String cadena1 = "";
-        cadena1 += super.toString() + " - RADIO: " + radio + " metros - ALTURA: " + altura + " metros - VOLUMEN: " + volumen + "  metros cubicos.";
+        cadena1 += super.toString() + " - RADIO: " + radio + " metros - ALTURA: " + altura + " metros - VOLUMEN: " + volumen + "  metros cubicos - CAPACIDAD: " + capacidad+ " metros cubicos";
         return cadena1 ;
     }
+    
+    
     
 }

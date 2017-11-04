@@ -25,12 +25,12 @@ public class TanqueCubico extends Tanque implements Serializable {
     private static final Valvula[] valv = new Valvula[10];
     
     public TanqueCubico(){
-        super(0, valv, 0);
+        super(0, valv, 0, 0);
         lado = 0;
     }
     
-    public TanqueCubico(int a, Valvula [] val, int l, double vol){
-        super(a, val, vol);
+    public TanqueCubico(int a, Valvula [] val, int l, double vol, double cap){
+        super(a, val, vol, cap);
         lado = l;
     }
     
@@ -43,6 +43,28 @@ public class TanqueCubico extends Tanque implements Serializable {
         vol = vol / 100;
         
         return vol;
+    }
+    
+    @Override
+    public String mostrar(){
+        String cadena1 = "";
+        cadena1 += super.toString() + "\nLADO: " + lado + " metros\nVOLUMEN: " + volumen + "  metros cubicos\nCAPACIDAD: " + capacidad+ " metros cubicos";
+        return cadena1 ;
+    }
+    
+    @Override
+    public double getCapacidad(){
+        return capacidad;
+    }
+    
+    @Override
+    public double getVolumen(){
+        return volumen;
+    }
+    
+    @Override
+    public void setVolumen(double vol){
+        volumen = vol;
     }
     
     @Override
@@ -78,7 +100,7 @@ public class TanqueCubico extends Tanque implements Serializable {
     @Override
     public String toString() {
         String cadena1 = "";
-        cadena1 += super.toString() + " - LADO: " + lado + " metros - VOLUMEN: " + volumen + " metros cubicos.";
+        cadena1 += super.toString() + " - LADO: " + lado + " metros - VOLUMEN: " + volumen + " metros cubicos - CAPACIDAD: " + capacidad+ " metros cubicos";
         return cadena1 ;
     }
     

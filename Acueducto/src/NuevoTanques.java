@@ -601,6 +601,8 @@ public class NuevoTanques extends javax.swing.JFrame {
                 break;
             }
         }
+        boolean id = true;
+        
         
         //tq = new Tanque(valvulas);
         //db.agregarTanque(tq);
@@ -614,6 +616,13 @@ public class NuevoTanques extends javax.swing.JFrame {
         int largo = (int)spnLargo.getValue();
         int ancho = (int)spnAncho.getValue();
         
+        for(Tanque m: tanque){
+            if(m.getNum() == num){
+                id = false;
+                break;
+            }
+        }
+        
         double volumen;
         
         if(siguiente == true){
@@ -623,21 +632,21 @@ public class NuevoTanques extends javax.swing.JFrame {
                 case "Tanque Cilindrico":
                     TanqueCilindrico a = new TanqueCilindrico();
                     volumen = a.calcularVolumen(radio, altura, largo, ancho);
-                    tanque.add(db.agregarTanqueCilindrico(num, valvulas, radio, altura, volumen));
+                    tanque.add(db.agregarTanqueCilindrico(num, valvulas, radio, altura, volumen, volumen));
                     db.cerrarBD();
 
                     break;
                 case "Tanque Cubico":   
                     TanqueCubico b = new TanqueCubico();
                     volumen = b.calcularVolumen(radio, altura, largo, ancho);
-                    tanque.add(db.agregarTanqueCubico(num, valvulas, largo, volumen));
+                    tanque.add(db.agregarTanqueCubico(num, valvulas, largo, volumen, volumen));
                     db.cerrarBD();
 
                     break;
                 case "Tanque Ortogonal":
                     TanqueOrtogonal c = new TanqueOrtogonal();
                     volumen = c.calcularVolumen(radio, altura, largo, ancho);
-                    tanque.add(db.agregarTanqueOrtogonal(num, valvulas, altura, largo, ancho, volumen));
+                    tanque.add(db.agregarTanqueOrtogonal(num, valvulas, altura, largo, ancho, volumen, volumen));
                     db.cerrarBD();
                     break;
             }

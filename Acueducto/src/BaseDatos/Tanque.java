@@ -23,6 +23,7 @@ public class Tanque implements Serializable {
     protected int num;
     protected Valvula[] valvula;
     protected double volumen;
+    protected double capacidad;
     
     
        
@@ -30,10 +31,11 @@ public class Tanque implements Serializable {
         
     }
     
-    public Tanque(int a, Valvula[] valv, double vol){
+    public Tanque(int a, Valvula[] valv, double vol, double cap){
         num = a;
         valvula = valv;
         volumen = vol;
+        capacidad = cap;
     }
     
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho){
@@ -85,7 +87,23 @@ public class Tanque implements Serializable {
     public int getNum(){
         return num;
     }
+    
+    public double getCapacidad(){
+        return capacidad;
+    }
+    
+    public double getVolumen(){
+        return volumen;
+    }
+    
+    public void setVolumen(double vol){
+        volumen = vol;
+    }
 
+    public String mostrar(){
+        return "";
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

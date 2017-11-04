@@ -52,8 +52,8 @@ public class BasedeDatos {
         em.getTransaction().commit();
     }
     
-    public Tanque agregarTanqueCilindrico(int num, Valvula[] val, int radio, int altura, double vol){
-        TanqueCilindrico tc = new TanqueCilindrico(num, val, radio, altura, vol);
+    public Tanque agregarTanqueCilindrico(int num, Valvula[] val, int radio, int altura, double vol, double cap){
+        TanqueCilindrico tc = new TanqueCilindrico(num, val, radio, altura, vol, cap);
         
         System.out.println("Guardando...");
         
@@ -63,8 +63,8 @@ public class BasedeDatos {
         
         return tc;
     }
-    public Tanque agregarTanqueCubico(int num,Valvula[] val, int l, double vol){
-        TanqueCubico tc = new TanqueCubico(num, val, l, vol);
+    public Tanque agregarTanqueCubico(int num,Valvula[] val, int l, double vol, double cap){
+        TanqueCubico tc = new TanqueCubico(num, val, l, vol, cap);
         
         System.out.println("Guardando...");
         
@@ -75,8 +75,8 @@ public class BasedeDatos {
         return tc;
     }
     
-    public Tanque agregarTanqueOrtogonal(int num, Valvula[] val, int l, int a, int h, double vol){
-        TanqueOrtogonal to = new TanqueOrtogonal(num, val, l, h , a, vol);
+    public Tanque agregarTanqueOrtogonal(int num, Valvula[] val, int l, int a, int h, double vol, double cap){
+        TanqueOrtogonal to = new TanqueOrtogonal(num, val, l, h , a, vol, cap);
         
         System.out.println("Guardando...");
         
