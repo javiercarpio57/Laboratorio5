@@ -35,6 +35,17 @@ public class TanqueCubico extends Tanque implements Serializable {
     }
     
     @Override
+    public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
+        double vol = profundidad * profundidad * profundidad;
+        
+        vol = vol * 100;
+        vol = Math.round(vol);
+        vol = vol / 100;
+        
+        return vol;
+    }
+    
+    @Override
     public Long getId() {
         return id;
     }

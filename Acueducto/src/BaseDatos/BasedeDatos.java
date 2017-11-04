@@ -60,10 +60,31 @@ public class BasedeDatos {
         em.getTransaction().begin();
         em.persist(tc);
         em.getTransaction().commit();
-            
-        
         
         return tc;
+    }
+    public Tanque agregarTanqueCubico(Valvula[] val, int l, double vol){
+        TanqueCubico tc = new TanqueCubico(val, l, vol);
+        
+        System.out.println("Guardando...");
+        
+        em.getTransaction().begin();
+        em.persist(tc);
+        em.getTransaction().commit();
+        
+        return tc;
+    }
+    
+    public Tanque agregarTanqueOrtogonal(Valvula[] val, int l, int a, int h, double vol){
+        TanqueOrtogonal to = new TanqueOrtogonal(val, l, h , a, vol);
+        
+        System.out.println("Guardando...");
+        
+        em.getTransaction().begin();
+        em.persist(to);
+        em.getTransaction().commit();
+        
+        return to;
     }
     
     public List<Valvula> recuperarValvulas(){

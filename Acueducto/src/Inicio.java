@@ -378,6 +378,11 @@ public class Inicio extends javax.swing.JFrame {
         txtInfo.setText(cadena);
     }//GEN-LAST:event_jButton21ActionPerformed
 
+    public void getListas(ArrayList<Valvula>a , ArrayList<Tanque> t){
+        tanques = t;
+        valvula = a;
+    }
+    
     /**
      * @param args the command line arguments
      */

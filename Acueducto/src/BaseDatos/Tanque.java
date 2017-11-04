@@ -38,6 +38,39 @@ public class Tanque implements Serializable {
         return 1.0;
     }
     
+    public boolean verificacion(String a, String b, String c, String d, String e, String f, String g, String h, String i, String j){
+        
+        boolean verificar;
+        
+        if(a.equals("")){
+            verificar = false;
+        }else if(b.equals("")){
+            verificar = false;
+        }else if(c.equals("")){
+            verificar = false;
+        }else if(d.equals("")){
+            verificar = false;
+        }else if(e.equals("")){
+            verificar = false;
+        }else if(f.equals("")){
+            verificar = false;
+        }else if(g.equals("")){
+            verificar = false;
+        }else if(h.equals("")){
+            verificar = false;
+        }else if(i.equals("")){
+            verificar = false;
+        }else if(j.equals("")){
+            verificar = false;
+        }else{
+            verificar = true;
+        }
+        
+        System.out.println(verificar);
+        
+        return verificar;
+    }
+    
     public Long getId() {
         return id;
     }

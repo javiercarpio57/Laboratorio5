@@ -40,6 +40,17 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
         profundidad = p;
     }
     
+    @Override
+    public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
+        double vol = altura * ancho * altura;
+        
+        vol = vol * 100;
+        vol = Math.round(vol);
+        vol = vol / 100;
+        
+        return vol;
+    }
+    
     public Long getId() {
         return id;
     }
