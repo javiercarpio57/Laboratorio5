@@ -25,12 +25,12 @@ public class TanqueCubico extends Tanque implements Serializable {
     private static final Valvula[] valv = new Valvula[10];
     
     public TanqueCubico(){
-        super(valv, 0);
+        super(0, valv, 0);
         lado = 0;
     }
     
-    public TanqueCubico(Valvula [] val, int l, double vol){
-        super(val, vol);
+    public TanqueCubico(int a, Valvula [] val, int l, double vol){
+        super(a, val, vol);
         lado = l;
     }
     
@@ -77,7 +77,9 @@ public class TanqueCubico extends Tanque implements Serializable {
 
     @Override
     public String toString() {
-        return "BaseDatos.TanqueCubico[ id=" + id + " ]";
+        String cadena1 = "";
+        cadena1 += super.toString() + " - LADO: " + lado + " metros - VOLUMEN: " + volumen + " metros cubicos.";
+        return cadena1 ;
     }
     
 }

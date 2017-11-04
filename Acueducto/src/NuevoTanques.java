@@ -97,6 +97,8 @@ public class NuevoTanques extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        spnNum = new javax.swing.JSpinner();
+        lblLargo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -252,6 +254,12 @@ public class NuevoTanques extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel17.setText("Ingrese la información correspondiente:");
 
+        spnNum.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        spnNum.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+
+        lblLargo1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lblLargo1.setText("ID");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -277,23 +285,6 @@ public class NuevoTanques extends javax.swing.JFrame {
                                         .addComponent(jLabel1)
                                         .addGap(54, 54, 54)
                                         .addComponent(cmbTanque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(59, 59, 59)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblLargo)
-                                            .addComponent(lblAncho))
-                                        .addGap(55, 55, 55)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(spnAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(spnLargo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(82, 82, 82)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblRadio)
-                                            .addComponent(lblAltura))
-                                        .addGap(30, 30, 30)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(spnRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(spnAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(m4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -350,7 +341,31 @@ public class NuevoTanques extends javax.swing.JFrame {
                                 .addComponent(jLabel17))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(311, 311, 311)
-                        .addComponent(jLabel4)))
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(210, 210, 210)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblLargo)
+                                    .addComponent(lblAncho)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblLargo1)
+                                .addGap(55, 55, 55)
+                                .addComponent(spnNum, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(55, 55, 55)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(spnAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spnLargo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(82, 82, 82)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRadio)
+                            .addComponent(lblAltura))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(spnRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spnAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
@@ -369,22 +384,28 @@ public class NuevoTanques extends javax.swing.JFrame {
                             .addComponent(lblLargo)
                             .addComponent(lblAltura)
                             .addComponent(spnLargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAncho)
-                            .addComponent(lblRadio)
-                            .addComponent(spnAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblAncho)
+                                    .addComponent(lblRadio)
+                                    .addComponent(spnAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblLargo1)
+                                    .addComponent(spnNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(spnAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(spnRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,8 +414,7 @@ public class NuevoTanques extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel16)
                                     .addGap(3, 3, 3))
-                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -455,7 +475,7 @@ public class NuevoTanques extends javax.swing.JFrame {
                                     .addComponent(spnP9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(spnP10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(guardar)
                 .addGap(83, 83, 83))
         );
@@ -588,7 +608,7 @@ public class NuevoTanques extends javax.swing.JFrame {
         //---------------------------------------
         
         String tipo = (String)cmbTanque.getSelectedItem();
-        
+        int num = (int)spnNum.getValue();
         int radio = (int)spnRadio.getValue();
         int altura = (int)spnAltura.getValue();
         int largo = (int)spnLargo.getValue();
@@ -603,21 +623,21 @@ public class NuevoTanques extends javax.swing.JFrame {
                 case "Tanque Cilindrico":
                     TanqueCilindrico a = new TanqueCilindrico();
                     volumen = a.calcularVolumen(radio, altura, largo, ancho);
-                    tanque.add(db.agregarTanqueCilindrico(valvulas, radio, altura, volumen));
+                    tanque.add(db.agregarTanqueCilindrico(num, valvulas, radio, altura, volumen));
                     db.cerrarBD();
 
                     break;
                 case "Tanque Cubico":   
                     TanqueCubico b = new TanqueCubico();
                     volumen = b.calcularVolumen(radio, altura, largo, ancho);
-                    tanque.add(db.agregarTanqueCubico(valvulas, largo, volumen));
+                    tanque.add(db.agregarTanqueCubico(num, valvulas, largo, volumen));
                     db.cerrarBD();
 
                     break;
                 case "Tanque Ortogonal":
                     TanqueOrtogonal c = new TanqueOrtogonal();
                     volumen = c.calcularVolumen(radio, altura, largo, ancho);
-                    tanque.add(db.agregarTanqueOrtogonal(valvulas, altura, largo, ancho, volumen));
+                    tanque.add(db.agregarTanqueOrtogonal(num, valvulas, altura, largo, ancho, volumen));
                     db.cerrarBD();
                     break;
             }
@@ -698,6 +718,7 @@ public class NuevoTanques extends javax.swing.JFrame {
     private javax.swing.JLabel lblAltura;
     private javax.swing.JLabel lblAncho;
     private javax.swing.JLabel lblLargo;
+    private javax.swing.JLabel lblLargo1;
     private javax.swing.JLabel lblRadio;
     private javax.swing.JTextField m1;
     private javax.swing.JTextField m10;
@@ -712,6 +733,7 @@ public class NuevoTanques extends javax.swing.JFrame {
     private javax.swing.JSpinner spnAltura;
     private javax.swing.JSpinner spnAncho;
     private javax.swing.JSpinner spnLargo;
+    private javax.swing.JSpinner spnNum;
     private javax.swing.JSpinner spnP1;
     private javax.swing.JSpinner spnP10;
     private javax.swing.JSpinner spnP2;

@@ -27,14 +27,14 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
     private static final Valvula[] valv = new Valvula[10];
     
     public TanqueOrtogonal(){
-        super(valv, 0);
+        super(0, valv, 0);
         base = 0;
         altura = 0;
         profundidad = 0;
     }
     
-    public TanqueOrtogonal(Valvula[] val, int b, int H, int p, double vol){
-        super(val, vol);
+    public TanqueOrtogonal(int a, Valvula[] val, int b, int H, int p, double vol){
+        super(a, val, vol);
         base = b;
         altura = H;
         profundidad = p;
@@ -42,7 +42,7 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
     
     @Override
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
-        double vol = altura * ancho * altura;
+        double vol = altura * ancho * profundidad;
         
         vol = vol * 100;
         vol = Math.round(vol);
@@ -81,7 +81,9 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
 
     @Override
     public String toString() {
-        return "BaseDatos.TanqueOrtogonal[ id=" + id + " ]";
+        String cadena1 = "";
+        cadena1 += super.toString() + " - BASE: " + base + " metros - ALTURA: " + altura + " metros - PROFUNDIDAD: " + profundidad + " metros - VOLUMEN: " + volumen + " metros cubicos";
+        return cadena1 ;
     }
     
 }

@@ -20,15 +20,18 @@ public class Tanque implements Serializable {
     private Long id;
 
     //private 
+    protected int num;
     protected Valvula[] valvula;
     protected double volumen;
+    
     
        
     public Tanque(){
         
     }
     
-    public Tanque(Valvula[] valv, double vol){
+    public Tanque(int a, Valvula[] valv, double vol){
+        num = a;
         valvula = valv;
         volumen = vol;
     }
@@ -78,6 +81,10 @@ public class Tanque implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public int getNum(){
+        return num;
+    }
 
     @Override
     public int hashCode() {
@@ -102,7 +109,7 @@ public class Tanque implements Serializable {
     @Override
     public String toString() {
         String cadena = "";
-        cadena += "ID: " + id; 
+        cadena += "ID: " + num; 
                 
         return cadena;
     }

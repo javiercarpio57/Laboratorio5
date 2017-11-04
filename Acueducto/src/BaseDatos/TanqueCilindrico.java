@@ -26,14 +26,14 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     private static final Valvula[] valv = new Valvula[10];
     
     public TanqueCilindrico(){
-        super(valv, 0);
+        super(0, valv, 0);
         radio = 0;
         altura = 0;
         volumen = 0;
     }
     
-    public TanqueCilindrico(Valvula[] valv, int R, int H, double vol){
-        super(valv, vol);
+    public TanqueCilindrico(int a, Valvula[] valv, int R, int H, double vol){
+        super(a, valv, vol);
         radio = R;
         altura = H;
     }
@@ -97,8 +97,7 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     @Override
     public String toString() {
         String cadena1 = "";
-        cadena1 += super.toString() + " - RADIO: " + radio + " - ALTURA: " + altura + " - VOLUMEN: " + volumen 
-                + "\n";
+        cadena1 += super.toString() + " - RADIO: " + radio + " metros - ALTURA: " + altura + " metros - VOLUMEN: " + volumen + "  metros cubicos.";
         return cadena1 ;
     }
     
