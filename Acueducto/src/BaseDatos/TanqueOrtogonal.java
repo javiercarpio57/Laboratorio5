@@ -9,8 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author javie
+ * @author Oliver Mazariegos
+ * @author Javier Carpio
+ * @version 5.11.2017
  */
 @Entity
 public class TanqueOrtogonal extends Tanque implements Serializable {
@@ -26,6 +27,9 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
     
     private static final Valvula[] valv = new Valvula[10];
     
+    /**
+     * Metodo que nos permite conectar con la base de datos.
+     */
     public TanqueOrtogonal(){
         super(0, valv, 0, 0);
         base = 0;
@@ -33,6 +37,16 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
         profundidad = 0;
     }
     
+    /**
+     * Metodo que nos permite crear un tanque ortogonal.
+     * @param a Numero de identificacion
+     * @param val Array de 10 valvulas
+     * @param b Base del tanque
+     * @param H Altura del tanque
+     * @param p Profundidad del tanque 
+     * @param vol Volumen del tanque
+     * @param cap Capacidad del tanque
+     */
     public TanqueOrtogonal(int a, Valvula[] val, int b, int H, int p, double vol, double cap){
         super(a, val, vol, cap);
         base = b;
@@ -40,6 +54,14 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
         profundidad = p;
     }
     
+    /**
+     * Metodo que nos permite calcular el volumen del tanque ortogonal.
+     * @param radio Radio del tanque. No se usa.
+     * @param altura Altura del tanque.
+     * @param profundidad Profundidad del tanque.
+     * @param ancho Ancho del tanque.
+     * @return  Volumen
+     */
     @Override
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
         double vol = altura * ancho * profundidad;
@@ -51,21 +73,37 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
         return vol;
     }
     
+    /**
+     * Metodo que nos permite conocer la capacidad del tanque.
+     * @return capacidad
+     */
     @Override
     public double getCapacidad(){
         return capacidad;
     }
     
+    /**
+     * Metodo que nos permite conocer el volumen.
+     * @return volumen
+     */
     @Override
     public double getVolumen(){
         return volumen;
     }
     
+    /**
+     * Metodo que nos permite cambiar el volumen.
+     * @param vol Volumen nuevo
+     */
     @Override
     public void setVolumen(double vol){
         volumen = vol;
     }
     
+    /**
+     * Metodo que nos permite conocer la informacion del tanque ortogonal.
+     * @return informacion
+     */
     @Override
     public String mostrar(){
         String cadena1 = "";
@@ -73,11 +111,19 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
         return cadena1 ;
     }
     
+    /**
+     * Metodo que nos permite conocer el ID.
+     * @return id
+     */
     @Override
     public Long getId() {
         return id;
     }
 
+    /**
+     * Metodo que nos permite cambiar el ID.
+     * @param id Nuevo ID.
+     */
     @Override
     public void setId(Long id) {
         this.id = id;
@@ -103,6 +149,10 @@ public class TanqueOrtogonal extends Tanque implements Serializable {
         return true;
     }
 
+    /**
+     * Metodo que nos permite conocer la informacion del tanque.
+     * @return informacion
+     */
     @Override
     public String toString() {
         String cadena1 = "";

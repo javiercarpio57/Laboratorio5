@@ -94,7 +94,10 @@ public class TanqueCilindrico extends Tanque implements Serializable {
         volumen = vol;
     }
 
-    
+    /**
+     * Metodo que nos permite conocer los datos del tanque cilindrico.
+     * @return informacion
+     */
     @Override
     public String mostrar(){
         String cadena1 = "";
@@ -102,6 +105,14 @@ public class TanqueCilindrico extends Tanque implements Serializable {
         return cadena1 ;
     }
     
+    /**
+     * Metodo que nos permite calcular el volumen del tanque cilindrico.
+     * @param radio Radio del tanque
+     * @param altura Altura del tanque
+     * @param profundidad Profundidad del tanque. No se usa.
+     * @param ancho Ancho del tanque. No se usa.
+     * @return Volumen
+     */
     @Override
     public double calcularVolumen(int radio, int altura, int profundidad, int ancho) {
         double vol = radio * radio * altura * Math.PI;
@@ -112,17 +123,23 @@ public class TanqueCilindrico extends Tanque implements Serializable {
         return vol;
     }
     
-    
+    /**
+     * Metodo que nos permite conocer el ID del tanque.
+     * @return ID
+     */
     @Override
     public Long getId() {
         return id;
     }
-
+    
+    /**
+     * Metodo que nos permite asignarle un valor al ID.
+     * @param id Nuevo ID
+     */
     @Override
     public void setId(Long id) {
         this.id = id;
     }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -143,6 +160,10 @@ public class TanqueCilindrico extends Tanque implements Serializable {
         return true;
     }
 
+    /**
+     * Metodo que nos permite conocer la informacion del tanque cilindrico
+     * @return informacion
+     */
     @Override
     public String toString() {
         String cadena1 = "";
