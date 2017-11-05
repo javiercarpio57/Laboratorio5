@@ -32,6 +32,7 @@ public class BasedeDatos {
     
     public void agregarValv(Valvula v1, Valvula v2, Valvula v3, Valvula v4, Valvula v5,
             Valvula v6, Valvula v7, Valvula v8, Valvula v9, Valvula v10){
+        
         em.getTransaction().begin();
         em.persist(v1);
         em.persist(v2);
@@ -55,8 +56,6 @@ public class BasedeDatos {
     public Tanque agregarTanqueCilindrico(int num, Valvula[] val, int radio, int altura, double vol, double cap){
         TanqueCilindrico tc = new TanqueCilindrico(num, val, radio, altura, vol, cap);
         
-        System.out.println("Guardando...");
-        
         em.getTransaction().begin();
         em.persist(tc);
         em.getTransaction().commit();
@@ -65,8 +64,6 @@ public class BasedeDatos {
     }
     public Tanque agregarTanqueCubico(int num,Valvula[] val, int l, double vol, double cap){
         TanqueCubico tc = new TanqueCubico(num, val, l, vol, cap);
-        
-        System.out.println("Guardando...");
         
         em.getTransaction().begin();
         em.persist(tc);
@@ -77,8 +74,6 @@ public class BasedeDatos {
     
     public Tanque agregarTanqueOrtogonal(int num, Valvula[] val, int l, int a, int h, double vol, double cap){
         TanqueOrtogonal to = new TanqueOrtogonal(num, val, l, h , a, vol, cap);
-        
-        System.out.println("Guardando...");
         
         em.getTransaction().begin();
         em.persist(to);
@@ -103,4 +98,27 @@ public class BasedeDatos {
         return tanques;
     }
 
+    public void modificarVolumen(int num, double volumen){
+        
+        Query q = em.createQuery("select d from Tanque d where d.num = :num");
+        q.setParameter("num", num);
+        Tanque tq = (Tanque)q.getSingleResult();
+        if(tq != null){
+            tq.setVolumen(volumen);
+            em.getTransaction().begin();// grabar el docente en la base de datos
+            em.persist(tq);
+            em.getTransaction().commit();
+        }
+                
+    }
+    
+    public void agregarFecha(Fecha f){
+        //Fecha fecha = new Fecha(abrir, cerrar);
+        
+        em.getTransaction().begin();
+        em.persist(f);
+        em.getTransaction().commit();
+        
+        
+    }
 }

@@ -30,6 +30,8 @@ public class NuevoTanques extends javax.swing.JFrame {
         tanque = new ArrayList<>();
         valvulas = new Valvula[10];
         
+        
+        
         lblAltura.setVisible(true);
                 lblRadio.setVisible(true);
                 spnAltura.setVisible(true);
@@ -101,6 +103,11 @@ public class NuevoTanques extends javax.swing.JFrame {
         lblLargo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel1.setText("Seleccione la forma del Tanque");
@@ -604,6 +611,7 @@ public class NuevoTanques extends javax.swing.JFrame {
         boolean id = true;
         
         
+        
         //tq = new Tanque(valvulas);
         //db.agregarTanque(tq);
         
@@ -625,7 +633,7 @@ public class NuevoTanques extends javax.swing.JFrame {
         
         double volumen;
         
-        if(siguiente == true){
+        if((siguiente == true) && (id == true)){
             db.agregarValv(valv1, valv2, valv3, valv4, valv5, valv6, valv7, valv8, valv9, valv10);
             
             switch (tipo) {
@@ -653,14 +661,23 @@ public class NuevoTanques extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Se ha guardado con exito.");
             Inicio i = new Inicio();
+            i.getListas(valv, tanque);
             i.setVisible(true);
             this.setVisible(false);
+        }else if(id ==false){
+            JOptionPane.showMessageDialog(this, "Ingrese otro ID.");
         }else{
             JOptionPane.showMessageDialog(this, "No ha llenado todos los campos necesarios.");
         }
         
         
     }//GEN-LAST:event_guardarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        for(Tanque k: tanque){
+            System.out.println(k.getNum());
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     public void getListas(ArrayList<Valvula>a , ArrayList<Tanque> t){
         valv = a;

@@ -1,12 +1,17 @@
 
 import BaseDatos.BasedeDatos;
+import BaseDatos.Fecha;
 import BaseDatos.Tanque;
 import BaseDatos.TanqueCilindrico;
 import BaseDatos.TanqueCubico;
 import BaseDatos.TanqueOrtogonal;
 import BaseDatos.Valvula;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.persistence.Query;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,11 +24,14 @@ public class Inicio extends javax.swing.JFrame {
      */
     private ArrayList<Valvula> valvula;
     private ArrayList<Tanque> tanques;
+    private ArrayList<Fecha> fecha;
+    BasedeDatos db;
     
     public Inicio() {
         initComponents();
         valvula = new ArrayList<>();
         tanques = new ArrayList<>();
+        fecha = new ArrayList<>();
         
         BasedeDatos db = new BasedeDatos();
         for(Valvula x : db.recuperarValvulas()){
@@ -222,74 +230,164 @@ public class Inicio extends javax.swing.JFrame {
         btnA2.setBackground(new java.awt.Color(0, 204, 51));
         btnA2.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA2.setText("Abrir");
+        btnA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA2ActionPerformed(evt);
+            }
+        });
 
         btnA3.setBackground(new java.awt.Color(0, 204, 51));
         btnA3.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA3.setText("Abrir");
+        btnA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA3ActionPerformed(evt);
+            }
+        });
 
         btnA4.setBackground(new java.awt.Color(0, 204, 51));
         btnA4.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA4.setText("Abrir");
+        btnA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA4ActionPerformed(evt);
+            }
+        });
 
         btnA5.setBackground(new java.awt.Color(0, 204, 51));
         btnA5.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA5.setText("Abrir");
+        btnA5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA5ActionPerformed(evt);
+            }
+        });
 
         btnA6.setBackground(new java.awt.Color(0, 204, 51));
         btnA6.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA6.setText("Abrir");
+        btnA6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA6ActionPerformed(evt);
+            }
+        });
 
         btnA7.setBackground(new java.awt.Color(0, 204, 51));
         btnA7.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA7.setText("Abrir");
+        btnA7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA7ActionPerformed(evt);
+            }
+        });
 
         btnA8.setBackground(new java.awt.Color(0, 204, 51));
         btnA8.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA8.setText("Abrir");
+        btnA8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA8ActionPerformed(evt);
+            }
+        });
 
         btnA9.setBackground(new java.awt.Color(0, 204, 51));
         btnA9.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA9.setText("Abrir");
+        btnA9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA9ActionPerformed(evt);
+            }
+        });
 
         btnA10.setBackground(new java.awt.Color(0, 204, 51));
         btnA10.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnA10.setText("Abrir");
+        btnA10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnA10ActionPerformed(evt);
+            }
+        });
 
         btnC2.setBackground(new java.awt.Color(255, 0, 51));
         btnC2.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC2.setText("Cerrar");
+        btnC2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC2ActionPerformed(evt);
+            }
+        });
 
         btnC3.setBackground(new java.awt.Color(255, 0, 51));
         btnC3.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC3.setText("Cerrar");
+        btnC3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC3ActionPerformed(evt);
+            }
+        });
 
         btnC4.setBackground(new java.awt.Color(255, 0, 51));
         btnC4.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC4.setText("Cerrar");
+        btnC4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC4ActionPerformed(evt);
+            }
+        });
 
         btnC5.setBackground(new java.awt.Color(255, 0, 51));
         btnC5.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC5.setText("Cerrar");
+        btnC5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC5ActionPerformed(evt);
+            }
+        });
 
         btnC6.setBackground(new java.awt.Color(255, 0, 51));
         btnC6.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC6.setText("Cerrar");
+        btnC6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC6ActionPerformed(evt);
+            }
+        });
 
         btnC7.setBackground(new java.awt.Color(255, 0, 51));
         btnC7.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC7.setText("Cerrar");
+        btnC7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC7ActionPerformed(evt);
+            }
+        });
 
         btnC8.setBackground(new java.awt.Color(255, 0, 51));
         btnC8.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC8.setText("Cerrar");
+        btnC8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC8ActionPerformed(evt);
+            }
+        });
 
         btnC9.setBackground(new java.awt.Color(255, 0, 51));
         btnC9.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC9.setText("Cerrar");
+        btnC9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC9ActionPerformed(evt);
+            }
+        });
 
         btnC10.setBackground(new java.awt.Color(255, 0, 51));
         btnC10.setFont(new java.awt.Font("Century Gothic", 0, 21)); // NOI18N
         btnC10.setText("Cerrar");
+        btnC10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnC10ActionPerformed(evt);
+            }
+        });
 
         txtInfo.setColumns(20);
         txtInfo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -521,6 +619,7 @@ public class Inicio extends javax.swing.JFrame {
     
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         NuevoTanques nt = new NuevoTanques();
+        nt.getListas(valvula, tanques);
         nt.setVisible(true);
         this.setVisible(false);
         
@@ -540,24 +639,52 @@ public class Inicio extends javax.swing.JFrame {
     private void btnA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1ActionPerformed
         lbl1.setText("ACTIVO");
         
-        String op1 = (String)cmbID.getSelectedItem();
-        int op = Integer.parseInt(op1);
+        Fecha fecha = new Fecha(generarFecha(), "aaa");
+        System.out.println(fecha.getFechaAbrir() + " :: " + fecha.getFechaCerrar());
         
-        double gasto;
-        for(Tanque t: tanques){
-            if(t.getNum() == op){
-                gasto = t.getVolumen() - (0.05 * t.getVolumen());
-                gasto = gasto * 100;
-                gasto = Math.round(gasto);
-                gasto = gasto/100;
-                t.setVolumen(gasto);
-                
-                
-            }
-        }
-        mostrar();
+        
+        db.agregarFecha(fecha);
+        //db.cerrarBD();
+        
+        cambiarVolumen();
+        
     }//GEN-LAST:event_btnA1ActionPerformed
-
+    
+    public String generarFecha(){
+        Date fecha = new Date();
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        
+        String cadena = formatoFecha.format(fecha) + " - " + formatoHora.format(fecha) ;
+        return cadena;
+    }
+    
+    public void inactivar(){
+        lbl1.setText("INACTIVO");
+        lbl2.setText("INACTIVO");
+        lbl3.setText("INACTIVO");
+        lbl4.setText("INACTIVO");
+        lbl5.setText("INACTIVO");
+        lbl6.setText("INACTIVO");
+        lbl7.setText("INACTIVO");
+        lbl8.setText("INACTIVO");
+        lbl9.setText("INACTIVO");
+        lbl10.setText("INACTIVO");
+    }
+    
+    public void activar(){
+        lbl1.setText("ACTIVO");
+        lbl2.setText("ACTIVO");
+        lbl3.setText("ACTIVO");
+        lbl4.setText("ACTIVO");
+        lbl5.setText("ACTIVO");
+        lbl6.setText("ACTIVO");
+        lbl7.setText("ACTIVO");
+        lbl8.setText("ACTIVO");
+        lbl9.setText("ACTIVO");
+        lbl10.setText("ACTIVO");
+    }
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
         for(Tanque tq: tanques){
@@ -570,6 +697,141 @@ public class Inicio extends javax.swing.JFrame {
         lbl1.setText("INACTIVO");
     }//GEN-LAST:event_btnC1ActionPerformed
 
+    private void btnA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA2ActionPerformed
+        lbl2.setText("ACTIVO");
+        
+        cambiarVolumen();
+        
+    }//GEN-LAST:event_btnA2ActionPerformed
+
+    private void btnC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC2ActionPerformed
+        lbl2.setText("INACTIVO");
+    }//GEN-LAST:event_btnC2ActionPerformed
+
+    private void btnA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA3ActionPerformed
+        lbl3.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA3ActionPerformed
+
+    private void btnC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC3ActionPerformed
+        lbl3.setText("INACTIVO");
+    }//GEN-LAST:event_btnC3ActionPerformed
+
+    private void btnA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA4ActionPerformed
+        lbl4.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA4ActionPerformed
+
+    private void btnA5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA5ActionPerformed
+        lbl5.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA5ActionPerformed
+
+    private void btnA6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA6ActionPerformed
+        lbl6.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA6ActionPerformed
+
+    private void btnA7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA7ActionPerformed
+        lbl7.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA7ActionPerformed
+
+    private void btnA8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA8ActionPerformed
+        lbl8.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA8ActionPerformed
+
+    private void btnA9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA9ActionPerformed
+        lbl9.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA9ActionPerformed
+
+    private void btnA10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA10ActionPerformed
+        lbl10.setText("ACTIVO");
+        
+        cambiarVolumen();
+    }//GEN-LAST:event_btnA10ActionPerformed
+
+    private void btnC4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC4ActionPerformed
+        lbl4.setText("INACTIVO");
+    }//GEN-LAST:event_btnC4ActionPerformed
+
+    private void btnC5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC5ActionPerformed
+        lbl5.setText("INACTIVO");
+    }//GEN-LAST:event_btnC5ActionPerformed
+
+    private void btnC6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC6ActionPerformed
+        lbl6.setText("INACTIVO");
+    }//GEN-LAST:event_btnC6ActionPerformed
+
+    private void btnC7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC7ActionPerformed
+        lbl7.setText("INACTIVO");
+    }//GEN-LAST:event_btnC7ActionPerformed
+
+    private void btnC8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC8ActionPerformed
+        lbl8.setText("INACTIVO");
+    }//GEN-LAST:event_btnC8ActionPerformed
+
+    private void btnC9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC9ActionPerformed
+        lbl9.setText("INACTIVO");
+    }//GEN-LAST:event_btnC9ActionPerformed
+
+    private void btnC10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC10ActionPerformed
+        lbl10.setText("INACTIVO");
+    }//GEN-LAST:event_btnC10ActionPerformed
+    
+    
+    
+    public void cambiarVolumen(){
+        
+        
+        String op1 = (String)cmbID.getSelectedItem();
+        int op = Integer.parseInt(op1);
+        
+        double gasto;
+        double porcentaje1, porcentaje2;
+        if(tanques.size() > 0){
+            for(Tanque t: tanques){
+                if(t.getNum() == op){
+                    gasto = t.getVolumen() - (0.05 * t.getVolumen());
+                    porcentaje1 = t.getCapacidad() * 0.20;
+                    porcentaje2 = t.getCapacidad() * 0.10;
+                    if(gasto >= porcentaje1){
+                        gasto = gasto * 100;
+                        gasto = Math.round(gasto);
+                        gasto = gasto/100;
+
+                        try{
+                            db.modificarVolumen(t.getNum(), gasto);
+                        }catch(Exception e){
+
+                        }
+
+                        t.setVolumen(gasto);
+                        
+                        
+                    }else if((gasto < porcentaje1) && (gasto >= porcentaje2)){
+                        JOptionPane.showMessageDialog(this, "Resta menos del 25%. Se cerraran todas las valvulas.");
+                        inactivar();
+                    }else if(gasto < porcentaje2){
+                        JOptionPane.showMessageDialog(this, "Resta menos del 10%. Se cerraran todas las valvulas.");
+                        inactivar();
+                    }
+                    
+                }
+            }
+            mostrar();
+        }
+    }
+    
     public void getListas(ArrayList<Valvula>a , ArrayList<Tanque> t){
         tanques = t;
         valvula = a;

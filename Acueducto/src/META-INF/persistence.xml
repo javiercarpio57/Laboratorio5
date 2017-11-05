@@ -7,6 +7,7 @@
     <class>BaseDatos.TanqueCubico</class>
     <class>BaseDatos.TanqueOrtogonal</class>
     <class>BaseDatos.Valvula</class>
+    <class>BaseDatos.Fecha</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/acueducto?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value="Javiercarpio1"/>

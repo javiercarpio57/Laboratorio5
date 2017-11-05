@@ -520,6 +520,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA3">
       <Properties>
@@ -531,6 +534,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA4">
       <Properties>
@@ -542,6 +548,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA5">
       <Properties>
@@ -553,6 +562,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA6">
       <Properties>
@@ -564,6 +576,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA7">
       <Properties>
@@ -575,6 +590,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA7ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA8">
       <Properties>
@@ -586,6 +604,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA9">
       <Properties>
@@ -597,6 +618,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA9ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA10">
       <Properties>
@@ -608,6 +632,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA10ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC2">
       <Properties>
@@ -619,6 +646,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC3">
       <Properties>
@@ -630,6 +660,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC4">
       <Properties>
@@ -641,6 +674,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC5">
       <Properties>
@@ -652,6 +688,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC6">
       <Properties>
@@ -663,6 +702,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC7">
       <Properties>
@@ -674,6 +716,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC7ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC8">
       <Properties>
@@ -685,6 +730,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC9">
       <Properties>
@@ -696,6 +744,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC9ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC10">
       <Properties>
@@ -707,6 +758,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cerrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC10ActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
