@@ -9,8 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author javie
+ * @author Oliver Mazariegos
+ * @author Javier Carpio
+ * @version 5.11.2017
  */
 @Entity
 public class TanqueCilindrico extends Tanque implements Serializable {
@@ -25,6 +26,9 @@ public class TanqueCilindrico extends Tanque implements Serializable {
     
     private static final Valvula[] valv = new Valvula[10];
     
+    /**
+     * Constructor que nos permite conectar con la base de datos.
+     */
     public TanqueCilindrico(){
         super(0, valv, 0, 0);
         radio = 0;
@@ -32,35 +36,65 @@ public class TanqueCilindrico extends Tanque implements Serializable {
         volumen = 0;
     }
     
+    /**
+     * Constructor que nos permite crear los objetos del tanque cilindrico.
+     * @param a Contiene el numero del tanque.
+     * @param valv Contiene las valvulas del tanque.
+     * @param R Contiene la medida del radio del tanque.
+     * @param H Contiene la medida de la altura del tanque.
+     * @param vol Contiene el volumen del tanque.
+     * @param cap Contiene la capacidad del tanque.
+     */
     public TanqueCilindrico(int a, Valvula[] valv, int R, int H, double vol, double cap){
         super(a, valv, vol, cap);
         radio = R;
         altura = H;
     }
     
+    /**
+     * Metodo que nos permite conocer la medida del radio.
+     * @return radio
+     */
     public int getRadio(){
         return radio;
     }
     
+    /**
+     * Metodo que nos permite conocer la altura del tanque.
+     * @return altura
+     */
     public int getAltura(){
         return altura;
     }
     
+    /**
+     * Metodo que nos permite conocer la capacidad del tanque.
+     * @return capacidad
+     */
     @Override
     public double getCapacidad(){
         return capacidad;
     }
     
+    /**
+     * Metodo que nos permite conocer el volumen del tanque.
+     * @return volumen
+     */
     @Override
     public double getVolumen(){
         return volumen;
     }
     
+    /**
+     * Metodo que nos permite asignarle el volumen al tanque.
+     * @param vol Volumen nuevo.
+     */
     @Override
     public void setVolumen(double vol){
         volumen = vol;
     }
 
+    
     @Override
     public String mostrar(){
         String cadena1 = "";
