@@ -24,9 +24,7 @@ public class Fecha implements Serializable {
     private String FechaAbrir;
     private String FechaCerrar;
     
-    public Fecha(){
-        
-    }
+    public Fecha(){}
     
     public Fecha(String i, String f){
         FechaAbrir = i;
@@ -43,10 +41,10 @@ public class Fecha implements Serializable {
     
     public String generarFecha(){
         Date fecha = new Date();
-        //DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
         DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         
-        String cadena = formatoFecha.format(fecha);// + "/" + formatoHora.format(fecha) ;
+        String cadena = formatoFecha.format(fecha) + " - " + formatoHora.format(fecha) ;
         System.out.println(cadena);
         return cadena;
     }

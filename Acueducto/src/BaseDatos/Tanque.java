@@ -76,6 +76,18 @@ public class Tanque implements Serializable {
         return verificar;
     }
     
+    public String InstanceOf(Tanque tanque){
+        String tipo = "";
+        if(tanque instanceof TanqueCilindrico){
+            tipo = "Tanque cilindrico:";
+        }else if(tanque instanceof TanqueOrtogonal){
+            tipo = "Tanque ortogonal:";
+        }else if(tanque instanceof TanqueCubico){
+            tipo = "Tanque cubico:";
+        }
+        return tipo;
+    }
+    
     public Long getId() {
         return id;
     }
@@ -102,6 +114,16 @@ public class Tanque implements Serializable {
 
     public String mostrar(){
         return "";
+    }
+    
+    public String getValvula(){
+        String cadena = "";
+        
+        for(Valvula valv: valvula){
+            cadena += valv.toString() + "\n";
+        }
+        
+        return cadena;
     }
     
     @Override

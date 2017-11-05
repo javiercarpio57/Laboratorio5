@@ -6,6 +6,8 @@ import BaseDatos.TanqueCilindrico;
 import BaseDatos.TanqueCubico;
 import BaseDatos.TanqueOrtogonal;
 import BaseDatos.Valvula;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,6 +31,13 @@ public class Inicio extends javax.swing.JFrame {
     
     public Inicio() {
         initComponents();
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height;
+        int width = pantalla.width;
+        //setSize(width/2, height/2);		
+
+        setLocationRelativeTo(null);		
+        setVisible(true);
         valvula = new ArrayList<>();
         tanques = new ArrayList<>();
         fecha = new ArrayList<>();
@@ -37,7 +46,9 @@ public class Inicio extends javax.swing.JFrame {
         for(Valvula x : db.recuperarValvulas()){
             valvula.add(x);
         }
-        
+        for(Fecha f: db.recuperarFechas()){
+            fecha.add(f);
+        }
         int cont = 0;
         for(Valvula y: valvula){
             cont++;
@@ -110,6 +121,10 @@ public class Inicio extends javax.swing.JFrame {
         btnC10 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtInfo = new javax.swing.JTextArea();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -179,6 +194,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jButton21.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jButton21.setText("Mostrar Tanque");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,10 +202,24 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jButton22.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jButton22.setText("Tanques Cilindricos");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
 
+        jButton23.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jButton23.setText("Agua Disponible");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
+        jButton24.setBackground(new java.awt.Color(0, 204, 204));
+        jButton24.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jButton24.setText("Agregar tanque");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -394,6 +424,39 @@ public class Inicio extends javax.swing.JFrame {
         txtInfo.setRows(5);
         jScrollPane2.setViewportView(txtInfo);
 
+        jButton25.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jButton25.setText("Llenar tanque");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jButton26.setText("Fechas que cerro");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jButton27.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jButton27.setText("Fechas que abrio");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton28.setBackground(new java.awt.Color(204, 0, 0));
+        jButton28.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jButton28.setText("Salir");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -478,10 +541,12 @@ public class Inicio extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lbl9)))))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(38, 38, 38))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -497,30 +562,43 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton22))
-                            .addComponent(jButton23))
-                        .addGap(0, 25, Short.MAX_VALUE))))
+                            .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton27))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton21)
-                            .addComponent(jButton22))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton23)
-                        .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton26))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton27)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(cmbID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -586,7 +664,9 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(btnC10)
                         .addComponent(lbl10))
                     .addComponent(jButton24, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton28)
+                .addContainerGap())
         );
 
         pack();
@@ -603,13 +683,7 @@ public class Inicio extends javax.swing.JFrame {
         for(Tanque t: tanques){
             if(t.getNum() == op){
                 cadena = t.mostrar();
-                if(t instanceof TanqueCilindrico){
-                    tipo = "Tanque cilindrico:";
-                }else if(t instanceof TanqueOrtogonal){
-                    tipo = "Tanque ortogonal:";
-                }else if(t instanceof TanqueCubico){
-                    tipo = "Tanque cubico:";
-                }
+                tipo = t.InstanceOf(t);
             }
             
         }
@@ -631,7 +705,7 @@ public class Inicio extends javax.swing.JFrame {
         String cadena = "";
         for(Tanque x : tanques){
             a++;
-            cadena += a + ". " + x.toString() + "\n";
+            cadena += a + ". " + x.toString() + "\n" + x.getValvula() +  "\n";
         }
         txtInfo.setText(cadena);
     }//GEN-LAST:event_jButton21ActionPerformed
@@ -639,25 +713,10 @@ public class Inicio extends javax.swing.JFrame {
     private void btnA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA1ActionPerformed
         lbl1.setText("ACTIVO");
         
-        Fecha fecha = new Fecha(generarFecha(), "aaa");
-        System.out.println(fecha.getFechaAbrir() + " :: " + fecha.getFechaCerrar());
-        
-        
-        db.agregarFecha(fecha);
-        //db.cerrarBD();
-        
         cambiarVolumen();
         
     }//GEN-LAST:event_btnA1ActionPerformed
     
-    public String generarFecha(){
-        Date fecha = new Date();
-        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
-        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-        
-        String cadena = formatoFecha.format(fecha) + " - " + formatoHora.format(fecha) ;
-        return cadena;
-    }
     
     public void inactivar(){
         lbl1.setText("INACTIVO");
@@ -695,6 +754,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC1ActionPerformed
         lbl1.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC1ActionPerformed
 
     private void btnA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA2ActionPerformed
@@ -706,6 +766,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC2ActionPerformed
         lbl2.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC2ActionPerformed
 
     private void btnA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA3ActionPerformed
@@ -716,6 +777,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC3ActionPerformed
         lbl3.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC3ActionPerformed
 
     private void btnA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnA4ActionPerformed
@@ -762,39 +824,170 @@ public class Inicio extends javax.swing.JFrame {
 
     private void btnC4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC4ActionPerformed
         lbl4.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC4ActionPerformed
 
     private void btnC5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC5ActionPerformed
         lbl5.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC5ActionPerformed
 
     private void btnC6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC6ActionPerformed
         lbl6.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC6ActionPerformed
 
     private void btnC7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC7ActionPerformed
         lbl7.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC7ActionPerformed
 
     private void btnC8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC8ActionPerformed
         lbl8.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC8ActionPerformed
 
     private void btnC9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC9ActionPerformed
         lbl9.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC9ActionPerformed
 
     private void btnC10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnC10ActionPerformed
         lbl10.setText("INACTIVO");
+        registrarCerrar();
     }//GEN-LAST:event_btnC10ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        String cant = "";
+        String id = "";
+        String num = "";
+        int num1 = 0;
+        try{
+            num = (String)cmbID.getSelectedItem();
+            num1 = Integer.parseInt(num);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "No ha ingresado ninguna valvula");
+        }
+        
+        for(Tanque tanque: tanques){
+            if(tanque.getNum() == num1){
+                cant = String.valueOf(tanque.getVolumen());
+                id = String.valueOf(tanque.getNum());
+                txtInfo.setText("La cantidad de metros cubicos\ndisponibles de agua del tanque\n" + id + " para esta region es de: " + cant + " metros cubicos.");
+            }
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        String cadena = "Las valvulas se abrieron:\n";
+        
+        for(Fecha fe: fecha){
+            if(!fe.getFechaAbrir().equals("")){
+                cadena += fe.getFechaAbrir() + "\n";
+            }
+        }
+        
+        txtInfo.setText(cadena);
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        String cadena = "Las valvulas se cerraron:\n";
+        
+        for(Fecha fe: fecha){
+            if(!fe.getFechaCerrar().equals("")){
+                cadena += fe.getFechaCerrar() + "\n";
+            }
+            
+        }
+        
+        txtInfo.setText(cadena);
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        String tipo = "";
+        int cont = 0;
+        for(Tanque tanque: tanques){
+            tipo = tanque.InstanceOf(tanque);
+            
+            if(tipo.equals("Tanque cilindrico:")){
+                cont++;
+            }
+        }
+        
+        txtInfo.setText("Existen " + cont + " valvulas de tanques\ncilindricos que estan vertiendo.");
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        
+        
+        String op = "";
+        int op1 = 0;
+        double cap = 0.0;
+        try{
+            op = (String)cmbID.getSelectedItem();
+            op1 = Integer.parseInt(op);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "No ha ingresado ninguna valvula");
+        }
+        
+        for(Tanque tanque: tanques){
+            if(tanque.getNum() == op1){
+                cap = tanque.getCapacidad();
+                tanque.setVolumen(cap);
+                BasedeDatos db = new BasedeDatos();
+                
+                db.modificarVolumen(op1, cap);
+                db.cerrarBD();
+                JOptionPane.showMessageDialog(this, "Se ha rellenado el tanque " + op1);
+                mostrar();
+            }
+        }
+        
+    }//GEN-LAST:event_jButton25ActionPerformed
     
+    public void registrarAbrir(){
+        Fecha fecha1 = new Fecha();
+        String abrir = fecha1.generarFecha();
+        String cerrar = "";
+        
+        BasedeDatos mm = new BasedeDatos();
+        mm.agregarFecha(abrir, cerrar);
+        
+        Fecha fecha2 = new Fecha(abrir, cerrar);
+        fecha.add(fecha2);
+    }
     
+    public void registrarCerrar(){
+        Fecha fecha1 = new Fecha();
+        String cerrar = fecha1.generarFecha();
+        String abrir = "";
+        
+        BasedeDatos mm = new BasedeDatos();
+        mm.agregarFecha(abrir, cerrar);
+        
+        Fecha fecha2 = new Fecha(abrir, cerrar);
+        fecha.add(fecha2);
+    }
     
     public void cambiarVolumen(){
         
         
         String op1 = (String)cmbID.getSelectedItem();
-        int op = Integer.parseInt(op1);
+        
+        int op = 0;
+        try{
+            op = Integer.parseInt(op1);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Aun no hay ningun tanque ingresado. Intente nuevamente.");
+        }
         
         double gasto;
         double porcentaje1, porcentaje2;
@@ -808,9 +1001,10 @@ public class Inicio extends javax.swing.JFrame {
                         gasto = gasto * 100;
                         gasto = Math.round(gasto);
                         gasto = gasto/100;
-
+                        
+                        BasedeDatos n = new BasedeDatos();
                         try{
-                            db.modificarVolumen(t.getNum(), gasto);
+                            n.modificarVolumen(t.getNum(), gasto);
                         }catch(Exception e){
 
                         }
@@ -829,6 +1023,7 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
             mostrar();
+            registrarAbrir();
         }
     }
     
@@ -898,6 +1093,10 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

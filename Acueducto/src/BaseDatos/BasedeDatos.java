@@ -90,6 +90,14 @@ public class BasedeDatos {
         return valvulas;
     }
     
+    public List<Fecha> recuperarFechas(){
+        Query q = em.createQuery("select d from Fecha d");
+        List<Fecha> fecha = q.getResultList();
+        
+        
+        return fecha;
+    }
+    
     public List<Tanque> recuperarTanques(){
         Query q = em.createQuery("select d from Tanque d");
         List<Tanque> tanques = q.getResultList();
@@ -112,13 +120,14 @@ public class BasedeDatos {
                 
     }
     
-    public void agregarFecha(Fecha f){
-        //Fecha fecha = new Fecha(abrir, cerrar);
+    public void agregarFecha(String abrir, String cerrar){
+        Fecha fecha = new Fecha(abrir, cerrar);
         
         em.getTransaction().begin();
-        em.persist(f);
+        em.persist(fecha);
         em.getTransaction().commit();
         
-        
     }
+    
+    
 }

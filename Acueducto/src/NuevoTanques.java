@@ -5,6 +5,8 @@ import BaseDatos.TanqueCilindrico;
 import BaseDatos.TanqueCubico;
 import BaseDatos.TanqueOrtogonal;
 import BaseDatos.Valvula;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -29,7 +31,12 @@ public class NuevoTanques extends javax.swing.JFrame {
         valv = new ArrayList<>();
         tanque = new ArrayList<>();
         valvulas = new Valvula[10];
-        
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height;
+        int width = pantalla.width;
+        //setSize(width/2, height/2);
+        setLocationRelativeTo(null);		
+        setVisible(true);
         
         
         lblAltura.setVisible(true);
