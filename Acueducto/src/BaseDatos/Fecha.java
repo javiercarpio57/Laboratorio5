@@ -66,7 +66,6 @@ public class Fecha implements Serializable {
         DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         
         String cadena = formatoFecha.format(fecha) + " - " + formatoHora.format(fecha) ;
-        System.out.println(cadena);
         return cadena;
     }
     

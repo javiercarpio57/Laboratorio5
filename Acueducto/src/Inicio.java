@@ -2,17 +2,10 @@
 import BaseDatos.BasedeDatos;
 import BaseDatos.Fecha;
 import BaseDatos.Tanque;
-import BaseDatos.TanqueCilindrico;
-import BaseDatos.TanqueCubico;
-import BaseDatos.TanqueOrtogonal;
 import BaseDatos.Valvula;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import javax.persistence.Query;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,6 +31,7 @@ public class Inicio extends javax.swing.JFrame {
 
         setLocationRelativeTo(null);		
         setVisible(true);
+        
         valvula = new ArrayList<>();
         tanques = new ArrayList<>();
         fecha = new ArrayList<>();
